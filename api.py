@@ -4,7 +4,6 @@ The email is the key for the database since it is supposed to be unique while th
 
 """
 
-import json
 from flask import Flask, request, jsonify, abort
 
 #Some initial data in the "database". 
@@ -24,6 +23,8 @@ def getUsers():
 @app.route('/', methods=['PUT'])
 def addUser():
     data = request.json
+
+    #Make sure that the request have a proper format. 
     try: 
         email = data["email"]    
     except:
@@ -46,6 +47,8 @@ def addUser():
 @app.route('/', methods=['DELETE'])
 def removeUser():
     data = request.json
+
+    #Make sure that the request have a proper format. 
     try: 
         email = data["email"]    
     except:
