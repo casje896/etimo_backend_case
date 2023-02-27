@@ -6,7 +6,6 @@ Note: Make sure the server is running when running these tests.
 from flask import request, jsonify, abort
 import requests     
 import unittest
-unittest.TestLoader.sortTestMethodsUsing = None
 
 user1 = {"email": "user1@tester.com", "fname": "User", "lname": "One"}
 user2_bad = {"ema": "user.numberTwo@tester2.com", "fname": "User", "lname": "Two"}
